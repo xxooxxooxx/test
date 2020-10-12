@@ -28,12 +28,12 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.name "xxooxxooxx"
           git add time.txt
           git commit -m "Robot"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           force: true
-          repository: 'xxooxxooxx/tset2'
+          repository: 'tset2'
           github_token: ${{ secrets.S }}
