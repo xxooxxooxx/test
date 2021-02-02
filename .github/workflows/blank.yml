@@ -40,5 +40,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: ${{ github.ref }}
-          repository: 'https://github.com/xxooxxooxx/tset2.git'
+          repository: 'xxooxxooxx/tset2'
           github_token: ${{ secrets.S }}
