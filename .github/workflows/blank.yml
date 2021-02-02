@@ -37,4 +37,4 @@ jobs:
         with:
           branch: ${{ github.ref }}
           repository: 'xxooxxooxx/tset2'
-          github_token: ${{ secrets.s }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
