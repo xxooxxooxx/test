@@ -39,6 +39,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: master
-          repository: 'xxooxxooxx/tset2'
+          branch: ${{ github.ref }}
+          repository: 'https://github.com/xxooxxooxx/tset2.git'
           github_token: ${{ secrets.S }}
