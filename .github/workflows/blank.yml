@@ -30,27 +30,27 @@ jobs:
         env:
           KEY: ${{secrets.SS}}
       
+#      - name: Commit files
+#        run: |
+#          git config --local user.email "action@github.com"
+#          git config --local user.name "GitHub Action"
+#          git add *.txt
+#          git commit -m "update"
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          force: true
+#          github_token: ${{ secrets.PASSWD }}
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add *.txt
-          git commit -m "update"
+          git commit -m "Robot"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          force: true
+          branch: ${{ github.ref }}
+          repository: 'xxooxxooxx/tset2'
           github_token: ${{ secrets.PASSWD }}
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#      - name: Commit files
-#        run: |
-#          git config --local user.email "action@github.com"
-#          git config --local user.name "GitHub Action"
-#          git add time.txt
-#          git commit -m "Robot"
-#      - name: Push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          branch: ${{ github.ref }}
-#          repository: 'xxooxxooxx/tset2'
-#          github_token: ${{ secrets.SS }}
