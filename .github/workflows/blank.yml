@@ -29,16 +29,28 @@ jobs:
         run: bash sh.sh
         env:
           KEY: ${{secrets.SS}}
-      - run: echo $KEY
+      - run: echo $KEY>>time.txt
+      - uses: actions/checkout@v2
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add time.txt
-          git commit -m "Robot"
+          git add *.txt
+          git commit -m "update"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: ${{ github.ref }}
-          repository: 'xxooxxooxx/tset2'
-          github_token: ${{ secrets.SS }}
+          force: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Commit files
+#        run: |
+#          git config --local user.email "action@github.com"
+#          git config --local user.name "GitHub Action"
+#          git add time.txt
+#          git commit -m "Robot"
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          branch: ${{ github.ref }}
+#          repository: 'xxooxxooxx/tset2'
+#          github_token: ${{ secrets.SS }}
