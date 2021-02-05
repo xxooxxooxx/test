@@ -25,12 +25,13 @@ jobs:
 
 
       # Runs a single command using the runners shell
+      - uses: actions/checkout@v2
       - name: Run a one-line script
         run: bash sh.sh
         env:
           KEY: ${{secrets.SS}}
       - run: echo $KEY>>time.txt
-      - uses: actions/checkout@v2
+      
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
