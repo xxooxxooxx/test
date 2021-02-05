@@ -27,7 +27,8 @@ jobs:
         env:
           KEY: ${{secrets.SS}}
       - run: echo "$KEY">>time.txt
-      
+        env:
+          KEY: ${{secrets.SS}}
       
       - name: Commit files
         run: |
