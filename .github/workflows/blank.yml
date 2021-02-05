@@ -27,13 +27,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: bash sh.sh
+        env:
+          KEY: ${{secrets.SS}}
+        run: echo $KEY >>time.txt
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add time.txt
           git commit -m "Robot"
-          echo $github_token>>time.txt
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
